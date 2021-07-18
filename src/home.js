@@ -116,7 +116,7 @@ const mouse = {
     y: undefined
 }
 let initalPositions;
-let plane = makePlane(50, 100, 100, 200);
+let plane = makePlane(75, 50, 150, 100);
 let frame = 0
 let previousFace = null;
 const fadeVertextColorQ = new Set();
