@@ -1,1 +1,743 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Marco Flores</title><style>@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;1,500&family=Crimson+Text:ital@1&display=swap');body{margin: 0; -webkit-font-smoothing: antialiased;}.main{position: absolute;text-align: center;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;font-family: 'Crimson Pro', serif;font-size: 2em;}h1{width: 100vw;font-weight: normal;margin: 0;font-family: "Raleway", sans-serif;font-weight: 100; letter-spacing: 40px;text-transform: uppercase;}p{font-size: 0.889em;margin: 0;font-weight: normal;margin: 0;font-family: "Raleway", sans-serif;font-weight: 100; letter-spacing: 40px;text-transform: uppercase;}.page{width:100vw;position: absolute;transform: translate3d(0,20%,0);top:0px;left:0px;z-index:0;background:none;opacity:0;padding-bottom:10vw;transition: .8s ease-in-out;}.show{opacity: 1;}.page.show{z-index:100; opacity:1; transform: translate3d(0,0,0);}.page.hide{display: none;}.footer-menu{z-index:100; padding:0; margin:0; position: fixed; bottom:20vh; width:100%; text-align: center; opacity: 0;}.footer-menu.show{opacity: 1;}.footer-menu .menu-items{padding:0; margin:0;}.footer-menu .menu-item{display: inline-block; cursor: pointer; color:white; text-transform: uppercase; letter-spacing: 0.2vw; text-indent:.2vw;font-size: 1vw;opacity:.5; padding-right:4vw; padding-left:4vw; user-select: none;}</style><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head><body><div class="main show"><h1>Marco Flores</h1><p>Software Engineer</p></div><div class="footer-menu show"><ul class="menu-items"><a class="menu-item menu-work" id="Projects" href="https://github.com/M4rkFlor">Projects</a></ul></div><script src="three.min.js"></script><script src="home.min.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Marco Flores - Fullstack Software Engineer</title>
+
+    <meta name="title" content="Marco Flores - Fullstack Software Engineer">
+    <meta name="description" content="Specializing in Azure AD B2C custom IEF policies, Microsoft Entra, and enterprise CIAM, I build secure, scalable identity solutions for modern enterprises.">
+    <meta name="keywords" content="Marco Flores, Software Engineer, Fullstack, Full-stack, Fullstack Software Engineer, Web Developer, Backend Developoer, Frontend Developer, Portfolio, Entra, Entra External ID, Azure AD B2C, Microsoft Entra Consultant, EEID, Entra External ID Expert, Azure AD B2C Expert, Azure AD B2C Software Developer, Azure AD B2C IEF Software Developer, IEF, Azure AD B2C Identity Experience Framework, Identity Experience Framework, Azure AD B2C IEF (Custom Policy), Custom Policy, Custom Policies,  Insider Knowledge">
+    <meta name="author" content="Marco Flores">
+
+    <!-- Open Graph Meta Tags / Facebook -->
+    <meta property="og:title" content="Marco Flores - Fullstack Software Engineer">
+    <meta property="og:description" content="Marco Flores - Software Engineer Portfolio. I have in-depth knowledge in Microsoft Entra and CIAM systems for Enterprises.">
+    <meta property="og:image" content="assets/images/banner.webp">
+    <meta property="og:url" content="/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marco Flores - Fullstack Software Engineer">
+    <meta name="twitter:description" content="Marco Flores - Software Engineer Portfolio. I have in-depth knowledge in Microsoft Entra and CIAM systems for Enterprises.">
+    <meta name="twitter:image" content="assets/images/banner.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/MF.svg" type="image/x-icon">
+
+    <!-- Google Fonts: Rubik -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&amp;display=swap">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Preload Important resources -->
+    <link rel="preload" href="assets/css/aos.css" as="style" >
+    <link rel="preload" href="assets/css/owl.carousel.min.css" as="style" >
+    <link rel="preload" href="assets/css/bootstrap.min.css" as="style" />
+    <link rel="preload" href="assets/css/bootstrap-icons.min.css" as="style" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" as="style"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+
+    <!-- Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="615f8574-dc9f-48b6-ae96-c810bb77f0c1"></script>
+    
+
+    <!-- Swipper styles -->
+    <style>
+      #works{
+        overflow-x: hidden;
+      }
+      #projects{
+        overflow-x: hidden;
+      }
+      .row{
+        overflow-x: hidden;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper {
+        overflow: visible; /* Allow arrows to be positioned outside */
+        position: relative;
+    }
+
+    /* Custom arrow positioning */
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .swiper-button-next{
+      right: -50px;
+    }
+
+    .swiper-button-prev {
+      left: -50px;
+    }
+    </style>
+
+</head>
+
+<body data-bs-theme="dark"  data-bs-target="#navbar">
+
+    <div id="lightbox-modal" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Image in Lightbox">
+    </div>
+    
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <nav id="navbar" class="navbar navbar-expand-md">
+            <div class="container">
+                <a href="/" class="navbar-brand logo">
+                    <span><</span>
+                    <span class="logo-name">Marco Flores</span>
+                    <span>/></span>
+                </a>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarMenu">
+                    <div class="offcanvas-header">
+                        <a href="/" class="offcanvas-title navbar-brand logo" id="offcanvasNavbarMenu" data-aos="fade-down" data-aos-delay="600">
+                            <span><</span>
+                            <span class="logo-name">Marco Flores</span>
+                            <span>/></span>
+                        </a>
+                        <button type="button" class="navbar-toggler" data-bs-dismiss="offcanvas" aria-label="Close Navigation Menu"><i class="bi bi-x toggle-icon"></i></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav nav-underline justify-content-end flex-grow-1">
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="500" data-bs-dismiss="offcanvas"><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="800" data-bs-dismiss="offcanvas"><a href="#works" class="nav-link">Works</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="700" data-bs-dismiss="offcanvas" ><a href="#tools" class="nav-link">Tools</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="600" data-bs-dismiss="offcanvas"><a href="#about" class="nav-link">About</a></li>
+                            <li class="nav-item" data-aos="fade-down" data-aos-delay="1000" data-bs-dismiss="offcanvas"><a href="#contact" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn border-0" id="switchTheme" data-aos="fade-down" data-aos-delay="600"><i class="bi bi-brightness-high-fill"></i></button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle Navigation Menu" data-aos="fade-down" data-aos-delay="600"><i class="bi bi-list toggle-icon"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container">     
+            <div class="row about-content">
+                <div class="col-lg-5 order-lg-2">
+                    <div class="hero-portrait">
+                        <div class="pic" data-aos="fade-up" data-aos-delay="600"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7 order-lg-1 hero-content">
+                    <span class="h3" data-aos="fade-up" data-aos-delay="0">Hello, I'm</span>
+                    <h1 class="name" data-aos="fade-up" data-aos-delay="200">Marco Flores</h1>
+                    <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase"  data-aos="fade-up" data-aos-delay="400"><i class="bi bi-stars"></i> Full Stack Software Engineer</button>
+                    <button type="button" class="btn btn-sm mt-3 mb-3 btn-showcase"  data-aos="fade-up" data-aos-delay="400"><i class="bi bi-stars"></i> IAM & CIAM</button>
+                    <p class="tagline mb-3" data-aos="fade-up" data-aos-delay="600">
+                        I deliver enterprise-grade solutions for <span class="underline">Fortune 500</span> 
+                        companies. My expertise is in designing and implementing secure, user-centric 
+                        CIAM platforms tailored to the diverse needs of large organizations.
+                        <div class="social-icons pb-2 pt-2 mb-2">
+                        <a href="https://github.com/M4rkFlor" target="_blank" class="github" data-aos="fade-up" data-aos-delay="620"><i class="bi bi-github"></i></a>
+                        <a href="http://www.linkedin.com/in/m4rkflores" target="_blank" class="linkedin" data-aos="fade-up" data-aos-delay="690"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="d-flex call-to-action">
+                        <a href="#contact" data-aos="fade-up" data-aos-delay="700"><button type="button" class="btn me-4 primary-bg-btn"><i class="bi bi-envelope"></i> Contact Me</button></a>
+                        <a href="#works" data-aos="fade-up" data-aos-delay="800"><button type="button" class="btn btn-light secondary-bg-btn">View Portfolio <i class="bi bi-arrow-up-right-circle"></i></button></a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What I've done?</span></h6>
+            <h2 class="section-heading text-center"> Works </h2>
+ 
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                        <div class="row">
+                            <!-- First Column (Text) -->
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <h2>Mayo Clinic</h2>
+                                <p class="text-description-summary">
+                                    <strong>UI Implementation & Mobile Integration</strong>
+                                </p>
+                                <ul class="text-descriptions">
+                                    <li>Collaborated with UI designers to transform Figma designs into fully functional, responsive web pages.</li>
+                                    <li>Developed account-related pages, including sign-in, password reset, and Multi-Factor Authentication (MFA) registration, ensuring mobile compatibility.</li>
+                                    <li>Coordinated with mobile development teams to integrate Microsoft Entra into the Mayo Clinic mobile app, streamlining authentication across platforms.</li>
+                                </ul>
+        
+                            </div>
+                
+                            <!-- Second Column (Image) -->
+                            <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                                <div class="project-card">
+                                    <img src="/assets/images/projects/Mayo2w.PNG" alt="Example Image" class="project-image lightbox-image" >
+                                </div>
+                            </div>
+                        </div>
+                  </div> 
+                  <div class="swiper-slide">
+                        <div class="row">
+                            <!-- First Column (Text) -->
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <h2>Intel</h2>
+                                <p class="text-description-summary">
+                                    <strong>Authentication Migration & Security</strong>
+                                </p>
+                                <ul class="text-descriptions">
+                                    <li>Led the migration and unification of customer-facing applications to authenticate via Microsoft Entra, streamlining access control.</li>
+                                    <li>Developed user interfaces using HTML, CSS, JavaScript, and jQuery, adhering closely to Figma design specifications.</li>
+                                    <li>Collaborated with application development teams to implement authentication via Microsoft Entra using the OpenID Connect (OIDC) protocol.</li>
+                                    <li>Designed and coded advanced authentication flows incorporating Multi-Factor Authentication (MFA), federated logins, anti-fraud measures, and Distributed Denial of Service (DDoS) attack mitigations.</li>
+                                </ul>
+                            
+                            </div>
+                        
+                            <!-- Second Column (Image) -->
+                            <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                                <div class="project-card">
+                                    <img src="/assets/images/projects/intelSignup.PNG" alt="Example Image" class="project-image lightbox-image">
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <!-- Your existing works content here -->
+                    <div class="row">
+                        <!-- First Column (Text) -->
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <h2>Johnson & Johnson Institute</h2>
+                            <p class="text-description-summary">
+                                <strong>Backend Integrations & Infrastructure Automation</strong>
+                            </p>
+                            <ul class="text-descriptions">
+                                <li>Integrated backend systems with Learning Management Systems (LMS) to streamline training and content management processes.</li>
+                                <li>Resolved critical, long-standing bugs that previous employees had struggled with for months.</li>
+                                <li>Enhanced Azure AD B2C custom IEF policies with new features and security enhancements, including Captcha implementation for improved protection.</li>
+                                <li>Automated infrastructure deployment using ARM templates, enabling new developers to spin up entire environments in minutes, reducing setup time from weeks to minutes.</li>
+                            </ul>
+                        </div>
+            
+                        <!-- Second Column (Image) -->
+                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                            <div class="project-card">
+                                <img src="/assets/images/projects/jiiregister.PNG" alt="Example Image" class="project-image lightbox-image">
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="row">
+                        <!-- First Column (Text) -->
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <h2>National Grid</h2>
+                            <p class="text-description-summary">
+                                <strong>Comprehensive User Management Portal Development</strong>
+                            </p>
+                            <ul class="text-descriptions">
+                                <li>Developed a robust user management portal for onboarding organizations, enabling self-service management of team members.</li>
+                                <li>Empowered partner organization administrators to manage users and assign application-specific roles within their scope.</li>
+                                <li>Designed and implemented a full suite of REST APIs for efficient user management.</li>
+                                <li>Architected the SQL schema and developed a custom Micro ORM database framework in C# to optimize database operations.</li>
+                                <li>Integrated the portal with Microsoft Entra via OpenID Connect for seamless authentication and authorization.</li>
+                                <li>Collaborated on solution architecture and presented designs to stakeholders, securing their approval and buy-in for implementation.</li>
+                            </ul>
+                            <p class="text-descriptions"><strong>Technologies:</strong> Blazor, ASP.NET, Azure AD B2C.</p>
+                        </div>
+            
+                        <!-- Second Column (Image) -->
+                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                            <div class="project-card">
+                                <img src="/assets/images/projects/ORM.webp" alt="Example Image" class="project-image lightbox-image">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="row">
+                        <!-- First Column (Text) -->
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <h2>Point 32</h2>
+                            <p class="text-description-summary">
+                                <strong>Azure AD B2C Custom Policy Development & Front-End Collaboration</strong>
+                            </p>
+                            <ul class="text-descriptions">
+                                <li>Developed comprehensive user flows using Azure AD B2C Custom IEF policies, including sign-in, sign-up, password reset, and first-time login for migrated users.</li>
+                                <li>Implemented Multi-Factor Authentication (MFA) with a user choice between email OTP or Authenticator App (TOTP).</li>
+                                <li>Provided expert guidance and trained front-end teams, assisting with the implementation and styling of complex functionalities.</li>
+                            </ul>
+                        </div>
+            
+                        <!-- Second Column (Image) -->
+                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                            <div class="project-card">
+                                <img src="/assets/images/projects/P32.PNG" alt="Example Image" class="project-image lightbox-image">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="row">
+                        <!-- First Column (Text) -->
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <h2>MPI</h2>
+                            <p class="text-description-summary">
+                                <strong>CIAM Re-Architecture & Entra External ID Integration</strong>
+                            </p>
+                            <ul class="text-descriptions">
+                                <li>Coordinated with Microsoft to gain private preview access to Entra External ID for early adoption and integration.</li>
+                                <li>Re-architected the Customer Identity and Access Management (CIAM) experience, migrating legacy systems to the new Entra External ID platform.</li>
+                                <li>Developed a custom user management portal to address and extend fine-grained operational gaps in user management not covered by the Entra External ID platform.</li>
+                                <li>Secured WordPress content using role-based access control (RBAC) and integrated dual identity provider (IDP) support, connecting both Entra ID (on-premises) and Entra External ID with WordPress.</li>
+                            </ul>
+    
+                        </div>
+            
+                        <!-- Second Column (Image) -->
+                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                            <div class="project-card">
+                                <img src="/assets/images/projects/MPI.PNG" alt="Example Image" class="project-image lightbox-image">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="row">
+                        <!-- First Column (Text) -->
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <h2>Grit Software Systems</h2>
+                                <ul class="text-descriptions">
+                                    <!-- https://learn.microsoft.com/en-us/azure/active-directory-b2c/partner-grit-editor -->
+                                    <li>
+                                        I Created the <a href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/partner-grit-editor"><span class="underline">Visual AD B2C IEF Editor</span></a> which allows editing Azure AD B2C Identity Expereice Framework (IEF) Custom Policies visualy with no code.
+                                    </li>
+                                    <li>
+                                        I created the core logic to transform XML from custom policies into a visual graph based representation.
+                                    </li>
+                                    <li>
+                                        I created the visual debugger which maps Application Insight logs from the user journey into a visual reprentation of what occured.
+                                    </li>
+                                    <li>
+                                        Held various job titles including Senior/Lead Software Engineer, SME, and Solution Architect II while being consulted out to Fortune 500 companies to deliver CIAM platforms leveraging Azure AD B2C and Entra External ID.
+                                    </li>
+                                </ul>
+    
+                        </div>
+            
+                        <!-- Second Column (Image) -->
+                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                            <div class="project-card">
+                                <img src="/assets/images/projects/GritIEFEditor.PNG" alt="Example Image" class="project-image lightbox-image">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">My Creations</span></h6>
+            <h2 class="section-heading text-center">Projects</h2>
+            
+            <!-- Add your projects content here -->
+            <div class="swiper mySwiperProjects">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 mb-4">
+                                    <h2>Jane Street Puzzel -  "Knight Moves 6"</h2>
+                                    <p class="text-description-summary">
+                                        <strong>Algorithmic Programing</strong>
+                                    </p>
+                                    <ul class="text-descriptions">
+                                        <li>Found the minimal sum (Best trip) Resulting In my name being added to the leaderboard</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                                    <div class="project-card">
+                                        <img src="./assets/images/PersonalProjects/KM6.png" alt="Project Image" class="project-image lightbox-image">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="swiper-slide">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 mb-4">
+                                    <h2>Bear Ball</h2>
+                                    <p class="text-description-summary">
+                                        <strong>Game Programing</strong>
+                                    </p>
+                                    <ul class="text-descriptions">
+                                        <li>Created A multiplayer networked racing game made in unity, Featuring Multiple levels. </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                                    <div class="project-card">
+                                        <img src="./assets/images/PersonalProjects/BearBallMulti.png" alt="Project Image" class="project-image lightbox-image">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <h2>PayPal-Form-Filler</h2>
+                                <p class="text-description-summary">
+                                    <strong>Browser tool</strong>
+                                </p>
+                                <ul class="text-descriptions">
+                                    <li>A Chrome extension written in JavaScript that automates filling out guest checkout forms on PayPal using data generated from FakeNameGenerator</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                                <div class="project-card">
+                                    <img src="https://github.com/M4rkFlor/Pay-Pal-Form-Filler/raw/master/PayPalFormFillerChromeExtension/images/showcase.gif" alt="Project Image" class="project-image lightbox-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <h2>Mouse2Keyboard and Keyboard2Mouse</h2>
+                                <p class="text-description-summary">
+                                    <strong>Win32API + DLL Hooks</strong>
+                                </p>
+                                <ul class="text-descriptions">
+                                    <li>Created a set of programs to Turn your Mouse into a Keyboard and your Keyboard into a Mouse.
+                                        Creative Hacking to ensure both programs work at the same time.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-center">
+                                <div class="project-card">
+                                    <img src="./assets/images/PersonalProjects/SwapedInputs.png" alt="Project Image" class="project-image lightbox-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            
+            
+        </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What I use?</span></h6>
+            <h2 class="section-heading text-center">Tools</h2>
+            <p class="text-center muted-text mt-3 mb-4">Here is a small selection of tools that I use regularly</p>
+            <div class="row justify-content-center row-cols-2 row-cols-md-3 row-cols-lg-6 mt-4 gy-4 tools-container" data-aos="fade-down" data-aos-delay="200">
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="/assets/images/tools/vscode.svg" alt="VSCode">
+                        <p class="tool-name">VSCode</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/VisualStudio2022.svg" alt="C++">
+                        <p class="skill-name">Visual Studio</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/Python.svg" alt="Python">
+                        <p class="skill-name">Python</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/cSharp.svg" alt="CSharp">
+                        <p class="skill-name">CSharp</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/cplusplus.svg" alt="C++">
+                        <p class="skill-name">C++</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/JS.svg" alt="JavaScript">
+                        <p class="skill-name">JS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/NodeJS.svg" alt="NodeJS">
+                        <p class="skill-name">NodeJS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/typescript-svgrepo-com.svg" alt="TypeScript">
+                        <p class="skill-name">TypeScript</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/jquery-4.svg" alt="jQuery">
+                        <p class="skill-name">jQuery</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/react-2.svg" alt="React">
+                        <p class="skill-name">React</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/HTML.svg" alt="HTML">
+                        <p class="skill-name">HTML</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/CSS.svg" alt="CSS"/>
+                        <p class="skill-name">CSS</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/Bootstrap.svg" alt="Bootstrap">
+                        <p class="skill-name">Bootstrap</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="/assets/images/tools/github.svg" alt="Github">
+                        <p class="tool-name">Github</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="/assets/images/tools/Figma.svg" alt="Figma">
+                        <p class="tool-name">Figma</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tool">
+                        <img class="tool-image" src="/assets/images/tools/ChatGPT.svg" alt="ChatGPT">
+                        <p class="tool-name">ChatGPT</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/skills/MongoDB.svg" alt="MongoDB">
+                        <p class="skill-name">MongoDB</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/microsoft-sql-server.svg" alt="MicrosoftSQLServer">
+                        <p class="skill-name">MS SQL Server</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/postman-icon-svgrepo-com.svg" alt="PostMan">
+                        <p class="skill-name">PostMan</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/azure-2.svg" alt="PostMan">
+                        <p class="skill-name">Azure</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill">
+                        <img class="skill-image" src="/assets/images/tools/azure-active-directory.svg" alt="PostMan">
+                        <p class="skill-name">Active Directory</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">Who am I?</span></h6>
+            <h2 class="section-heading text-center">About Me</h2>
+            <p class="text-center muted-text mt-3 mb-4">Hello! I'm Marco. </p>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="200">
+                <div class="col-lg-5 about-portrait">
+                    <img src="assets/images/California.png" class="img-fluid pic" alt="About Me Portrait">
+                </div>
+                <div class="col-lg-7">
+                    <p class="bio">I'm a remote software engineer specializing in Customer Identity and Access Management (CIAM) solutions. Currently, I work at Grit Software Systems, where I develop and implement enterprise-grade CIAM systems using Azure AD B2C and Microsoft Entra External ID. I've collaborated with Fortune 500 companies to design secure and scalable identity solutions, including custom REST APIs, user management portals, sign-up and sign-in pages, and development of complex custom Azure AD B2C IEF policies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timelines 
+    <section id="timelines">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What am Doing?</span></h6>
+            <h2 class="section-heading text-center">Timelines</h2>
+            <div class="row justify-content-center row-cols-2 row-cols-md-3 row-cols-lg-6 skills-container">
+                <div class="col">
+                    <div>asd</div>
+                    <div>3</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h6 class="text-center"><span class="btn btn-sm theme-button theme-text">What's next!</span></h6>
+            <h2 class="section-heading text-center">Contact Me</h2>
+            <p class="text-center muted-text mt-3 mb-4">I am always open to hearing about new opurtunities</p>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="50">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form action="mailto:m4rk0flor@gmail.com" method="POST">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="subject" name="subject"  placeholder="Subject *" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea style="resize: none;" class="form-control" id="message" name="message" rows="5" placeholder="Your message *" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn primary-bg-btn mt-2">Send Message <i class="bi bi-arrow-up-right"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p class="text-center copyright-text">This is the bottom</p>
+        </div>
+    </footer>
+
+    <button class="btn" id="backToTopButton" onclick="scrollToTop()" style="display: none;">
+        <span aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-square" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+              </svg>
+        </span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/aos.js" defer></script>
+    <script src="assets/js/jquery-3.7.1.min.js" defer></script>
+    <script src="assets/js/owl.carousel.min.js" defer></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script >
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+
+        var swiper = new Swiper(".mySwiperProjects", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: ".swiper-paginationProjects",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+    </script>
+</body>
+</html>
