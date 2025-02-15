@@ -2,7 +2,7 @@
 
 > See live demo: [https://m4rkflor.github.io/](https://m4rkflor.github.io/)
 
-![Developer Portoflio](https://github.com/M4rkFlor/M4rkFlor.github.io/blob/main/Developer%20Portolio%20Website.png)
+![Developer Portoflio](https://github.com/M4rkFlor/M4rkFlor.github.io/blob/main/DeveloperPortolioWebsite.png)
 
 I'm Marco, and this is the code repository for my portfolio website.
 
